@@ -92,10 +92,10 @@ export const HeroSection = () => {
         delay: 0.6
       }} className="space-y-2 mb-12">
           <p className="text-xl sm:text-2xl font-serif text-primary">
-            2025. szeptember 14.
+            2026. szeptember 12.
           </p>
           <p className="text-muted-foreground">
-            Budapest, Magyarország
+            Pápa, Magyarország
           </p>
         </motion.div>
 

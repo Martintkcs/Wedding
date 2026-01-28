@@ -65,7 +65,7 @@ export const GallerySection = () => {
           className="text-center"
         >
           <a
-            href="#"
+            href="https://drive.google.com/drive/folders/17J3idz6NFTVr6s_wcH3lDQjjBeCExBJu?usp=sharing"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
           >
             <Camera size={18} />

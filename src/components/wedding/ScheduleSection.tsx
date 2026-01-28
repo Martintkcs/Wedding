@@ -7,22 +7,22 @@ const scheduleItems = [
   {
     time: "16:00",
     title: "Vendégek érkezése",
-    description: "Üdvözlő italok a kertben",
+    description: "Üdvözlő italok a kertben, Vendégváró falatokkal",
   },
   {
     time: "17:00",
     title: "Szertartás",
-    description: "Fogadalom a díszteremben",
+    description: "Fogadalom a kis szigeten",
   },
   {
     time: "18:00",
-    title: "Koktélóra",
-    description: "Frissítők és falatkák a teraszon",
+    title: "Gratuláció",
+    description: "Gratulációk és pezsgős koccintás,közös fotózás",
   },
   {
     time: "19:00",
     title: "Vacsora",
-    description: "Háromfogásos vacsora borsorral",
+    description: "Háromfogásos vacsora",
   },
   {
     time: "21:00",
@@ -40,7 +40,7 @@ const scheduleItems = [
     description: "Hagyományos magyar finomságok",
   },
   {
-    time: "02:00",
+    time: "05:00",
     title: "Ünneplés vége",
     description: "Köszönjük, hogy velünk ünnepeltetek!",
   },

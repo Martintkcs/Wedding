@@ -12,27 +12,23 @@ import { SectionDivider } from "./BotanicalDecoration";
 const faqs = [
   {
     question: "Mikor érkezzek?",
-    answer: "Kérjük, legkésőbb 16:00-ra érkezzetek, hogy legyen időtök helyet foglalni a 17:00-kor kezdődő szertartás előtt, és megkóstolni az üdvözlő frissítőket.",
+    answer: "Kérjük, legkésőbb 16:00-ra érkezzetek, hogy legyen időtök helyet foglalni a 17:00-kor kezdődő szertartás előtt, és megkóstolni az üdvözlő frissítőket és falatokat.",
   },
   {
     question: "Mit érdemes viselni?",
-    answer: "Az öltözködési stílus félformális / kerti parti elegancia. Hölgyeknek koktélruha, midi szoknya vagy elegáns overál, uraknak öltöny vagy elegáns nadrág zakóval. Kérjük, kerüljétek a fehér és krém színeket.",
+    answer: "Az öltözködési stílus formális, kérel kerüld a fekete,fehér,priros színeket",
   },
   {
     question: "Hozhatok kísérőt?",
     answer: "A meghívódból kiderül, hogy hozhatsz-e kísérőt. Ha bizonytalan vagy, kérlek, írj nekünk. Korlátozott a férőhely, ezért szeretnénk pontosan látni a létszámot.",
   },
   {
-    question: "Jöhetnek gyerekek is?",
-    answer: "Bár imádjuk a kicsiket, úgy döntöttünk, hogy felnőtteknek szóló ünnepség lesz. Reméljük, így nektek is jut egy szabad este!",
-  },
-  {
     question: "Van parkolási lehetőség?",
-    answer: "A helyszínen korlátozott a parkolás, érkezési sorrendben. Javasoljuk a tömegközlekedést vagy a taxit, főleg ha koccintanátok is!",
+    answer: "A helyszínen van a parkolásra lehetőség, érkezési sorrendben.",
   },
   {
     question: "Mi van, ha étkezési megkötésem van?",
-    answer: "Szívesen alkalmazkodunk az étkezési igényekhez! Kérjük, jelezd a visszajelzésben az allergiákat vagy megkötéseket. Lesz vegetáriánus opció, és kérésre vegán vagy gluténmentes ételt is biztosítunk.",
+    answer: "Szívesen alkalmazkodunk az étkezési igényekhez! Kérjük, jelezd az allergiákat vagy megkötéseket nekünk.",
   },
   {
     question: "Fotózhatok a szertartás alatt?",
@@ -40,15 +36,11 @@ const faqs = [
   },
   {
     question: "Mikor ér véget a buli?",
-    answer: "Az ünneplés nagyjából hajnali 2 körül ér véget. De ki tudja – ha még táncoltok, lehet, hogy tovább tart!",
+    answer: "Az ünneplés nagyjából hajnali 5 körül ér véget. De ki tudja – ha még táncoltok, lehet, hogy tovább tart!",
   },
   {
     question: "Van ajándéklista?",
-    answer: "Számunkra a jelenlétetek a legnagyobb ajándék. Ha mégis szeretnétek adni valamit, létrehoztunk egy kis nászútalapot. Részletek kérésre.",
-  },
-  {
-    question: "Hogyan jutok el a helyszínre a reptérről?",
-    answer: "A legegyszerűbb a taxi (kb. 30–40 perc, 25–30 €). Alternatíva: 100E busz a Deák Ferenc térig, onnan M4 metró a Szent Gellért térig, majd 5 perc séta.",
+    answer: "Ajándékon ne törd a fejed,egy borítékban elrejtheted!.",
   },
 ];
 

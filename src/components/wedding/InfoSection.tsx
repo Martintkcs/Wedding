@@ -8,32 +8,26 @@ const infoCards = [
   {
     icon: Calendar,
     title: "Dátum",
-    content: "2025. szeptember 14.",
+    content: "2026. szeptember 12.",
     subtext: "Szombat, 16:00",
   },
   {
     icon: MapPin,
     title: "Helyszín",
-    content: "Várkert Bazár",
-    subtext: "1013 Budapest, Ybl Miklós tér 2-6",
+    content: "Secret Lake",
+    subtext: "Pápa, Malom út 739/10, 8500",
   },
   {
     icon: Shirt,
     title: "Öltözködési stílus",
-    content: "Félformális",
-    subtext: "Kerti parti elegancia",
+    content: "Formális",
+    subtext: "elegánsan",
   },
   {
     icon: Gift,
     title: "Ajándékok",
     content: "Számunkra a jelenléted a legnagyobb ajándék",
-    subtext: "Kérjük, ne hozzatok tárgyi ajándékot",
-  },
-  {
-    icon: Users,
-    title: "Vendégek",
-    content: "Csak felnőtteknek szóló ünnepség",
-    subtext: "Kérjük, a kicsiket hagyjátok otthon",
+    subtext: "Ajándékon ne törd a fejed, egy borítékban elrejtheted!",
   },
   {
     icon: Heart,

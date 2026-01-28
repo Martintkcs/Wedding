@@ -9,8 +9,8 @@ const menuCategories = [
     icon: Wine,
     title: "Üdvözlő italok",
     items: [
-      "Aperol Spritz",
-      "Bodzás prosecco",
+      "Koktélok",
+      "Üdítők",
       "Friss limonádé",
       "Szénsavas víz",
     ],
@@ -19,30 +19,31 @@ const menuCategories = [
     icon: Utensils,
     title: "Vacsora",
     items: [
-      { course: "Előétel", dish: "Magyar libamájterrine fügekompóttal" },
-      { course: "Főétel", dish: "Lassan sült kacsamell meggyszósszal" },
-      { course: "Vegetáriánus", dish: "Erdei gombás rizottó szarvasgombaolajjal" },
-      { course: "Desszert", dish: "Dobos torta karamellkrémmel" },
+      { course: "Leves", dish: "Falusi tyúkhúsleves csigatésztával " },
+      { course: "Főétel I", dish: "Marhapörkölt galuskával" },
+      { course: "Főtel II", dish: "Csirke cordon Bleu\n" + "Rántott sertéskaraj\n" +
+            "Rántott trappista sajt" }
     ],
   },
   {
     icon: Moon,
     title: "Éjféli falatok",
     items: [
-      "Hagyományos gulyásleves",
-      "Lángos tejföllel",
-      "Kürtőskalács",
+      "falusi Töltött káposzta \n" +
+      "friss kenyérrel és tejföllel\n",
+      "Mini hamburger",
     ],
   },
   {
     icon: Coffee,
     title: "Italok egész éjjel",
     items: [
-      "Magyar borok (tokaji, egri)",
-      "Válogatott kézműves sörök",
-      "Egyedi koktélok",
-      "Pálinkakóstoló",
-      "Kávé- és teapont",
+      { course: "Tömények", dish: "Jager, Pálinka, Rum, Baliey's, Vodka, Gin" },
+      { course: "Csapolt sör", dish: "Peroni" },
+      { course: "Borok", dish: "Olasz Rizling, muskotáj, cabernet,\n" +
+            "rosé, kék frankos" },
+         { course: "alkoholmentes italok", dish: "Coca cola, Fanta, sprite, tonic,\n" +
+               "almalé, baracklé, narancslé, peroni, kávék, Limonádék" }
     ],
   },
 ];
@@ -111,25 +112,7 @@ export const MenuSection = () => {
         </div>
 
         {/* Dietary Note */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="max-w-2xl mx-auto"
-        >
-          <div className="flex items-start gap-4 p-6 rounded-2xl bg-accent/50 border border-primary/10">
-            <AlertCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-            <div>
-              <h4 className="font-medium text-foreground mb-1">
-                Étkezési igények
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Kérjük, a visszajelzéskor jelezzétek az allergiákat vagy étkezési megkötéseket.
-                Szívesen alkalmazkodunk vegetáriánus, vegán, gluténmentes és egyéb igényekhez is.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
 
       <SectionDivider />

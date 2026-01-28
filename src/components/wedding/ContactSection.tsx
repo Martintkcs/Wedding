@@ -8,14 +8,14 @@ const contacts = [
   {
     name: "Kati",
     role: "Menyasszony",
-    phone: "+36 30 123 4567",
-    email: "kati@example.com",
+    phone: "+36 30 893 3873",
+    email: "kati061099@gmail.com",
   },
   {
     name: "Martin",
     role: "Vőlegény",
-    phone: "+36 30 765 4321",
-    email: "martin@example.com",
+    phone: "+36 30 811 0871",
+    email: "martin.takacs25@gmail.com",
   },
 ];
 
@@ -88,15 +88,6 @@ export const ContactSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center"
         >
-          <a
-            href="https://wa.me/36301234567"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 transition-colors"
-          >
-            <MessageCircle size={20} />
-            Üzenj nekünk WhatsAppon
-          </a>
         </motion.div>
       </div>
     </section>
@@ -108,7 +99,7 @@ export const Footer = () => (
     <div className="section-container text-center">
       <LeafSvg className="w-8 h-12 mx-auto mb-6 text-primary/30" />
       <p className="font-serif text-2xl text-foreground mb-2">Kati & Martin</p>
-      <p className="text-sm text-muted-foreground mb-6">2025. szeptember 14.</p>
+      <p className="text-sm text-muted-foreground mb-6">2026. szeptember 12.</p>
       <p className="text-xs text-muted-foreground">
         Szeretettel készítve a nagy napunkra
       </p>

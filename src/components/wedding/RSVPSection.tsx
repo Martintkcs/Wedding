@@ -89,7 +89,7 @@ export const RSVPSection = () => {
         >
           <h2 className="text-heading text-foreground mb-4">Visszajelzés</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Kérjük, jelezzetek vissza legkésőbb 2025. augusztus 1-ig
+            Kérjük, jelezzetek vissza legkésőbb 2026. augusztus 1-ig
           </p>
         </motion.div>
 
