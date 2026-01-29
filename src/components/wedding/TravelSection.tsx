@@ -108,34 +108,56 @@ export const TravelSection = () => {
           </h3>
           <div className="flex justify-center">
             {accommodations.map((hotel, index) => (
-              <motion.a
-                key={hotel.name}
-                href={hotel.link}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="card-botanical group hover:shadow-elevated transition-all duration-300 w-full max-w-lg"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <Hotel className="w-5 h-5 text-primary" />
-                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                <h4 className="font-serif text-lg text-foreground mb-1">
-                  {hotel.name}
-                </h4>
-                <p className="text-sm text-muted-foreground mb-1">
-                  {hotel.distance} a helyszíntől
-                </p>
-                <p className="text-xs text-primary">
-                  {hotel.note}
-                </p>
-              </motion.a>
+                <motion.a
+                    key={hotel.name}
+                    href={hotel.link}
+                    initial={{opacity: 0, y: 20}}
+                    animate={isInView ? {opacity: 1, y: 0} : {}}
+                    transition={{duration: 0.5, delay: 0.4 + index * 0.1}}
+                    className="card-botanical group hover:shadow-elevated transition-all duration-300 w-full max-w-lg"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <Hotel className="w-5 h-5 text-primary"/>
+                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors"/>
+                  </div>
+                  <h4 className="font-serif text-lg text-foreground mb-1">
+                    {hotel.name}
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    {hotel.distance} a helyszíntől
+                  </p>
+                  <p className="text-xs text-primary">
+                    {hotel.note}
+                  </p>
+                </motion.a>
             ))}
           </div>
+          <motion.div
+              initial={{opacity: 0, y: 20}}
+              animate={isInView ? {opacity: 1, y: 0} : {}}
+              transition={{duration: 0.5, delay: 0.4}}
+              className="mt-8 rounded-2xl overflow-hidden shadow-card h-64 sm:h-80 bg-sage-muted/50 flex items-center justify-center"
+          >
+            <div className="text-center p-8">
+              <p className="text-muted-foreground mb-2">Interaktív térkép útvonal tervezéssel</p>
+              <p className="text-sm text-muted-foreground/60">
+                Hotel Villa Classica -Secret Lake, Pápa
+              </p>
+              <a
+                  href="https://www.google.com/maps/dir/Hotel+Villa+Classica,+P%C3%A1pa,+B%C3%A1stya+u.+1,+8500/Secret+Lake,+P%C3%A1pa,+Malom+%C3%BAt,+8500/@47.3093743,17.4736616,14.37z/data=!4m14!4m13!1m5!1m1!1s0x47696105804c381b:0x74fc07f57bfb3fa8!2m2!1d17.4643903!2d47.3272714!1m5!1m1!1s0x4769633bdc1d44eb:0x8f4d2a4a7a4cc5c!2m2!1d17.5054807!2d47.300435!3e0?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-4 text-primary hover:underline text-sm"
+              >
+                Megnyitás a Google Térképen
+                <ExternalLink size={14}/>
+              </a>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      <SectionDivider />
+      <SectionDivider/>
     </section>
   );
 };
