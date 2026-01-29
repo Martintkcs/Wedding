@@ -59,14 +59,16 @@ export const InfoSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           {infoCards.map((card, index) => (
             <motion.div
               key={card.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-botanical group hover:shadow-elevated transition-shadow duration-300"
+              className={`card-botanical group hover:shadow-elevated transition-shadow duration-300 md:col-span-1 lg:col-span-2 ${
+                index === 3 ? "lg:col-start-2" : ""
+              } ${index === 4 ? "lg:col-start-4" : ""}`}
             >
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
