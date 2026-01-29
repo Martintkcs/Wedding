@@ -9,7 +9,7 @@ const menuCategories = [
     icon: Wine,
     title: "Üdvözlő italok",
     items: [
-      "Koktélok",
+      "Alkholos italok",
       "Üdítők",
       "Friss limonádé",
       "Szénsavas víz",
@@ -40,7 +40,7 @@ const menuCategories = [
     items: [
       { course: "Tömények", dish: "Jager, Pálinka, Rum, Baliey's, Vodka, Gin" },
       { course: "Csapolt sör", dish: "Peroni" },
-      { course: "Borok", dish: "Olasz Rizling, muskotáj, cabernet,\n" +
+      { course: "Borok", dish: "Olasz Rizling, muskotály, cabernet,\n" +
             "rosé, kék frankos" },
          { course: "alkoholmentes italok", dish: "Coca cola, Fanta, sprite, tonic,\n" +
                "almalé, baracklé, narancslé, peroni, kávék, Limonádék" }

@@ -69,7 +69,7 @@ export const HeroSection = () => {
         duration: 0.8,
         delay: 0.2
       }} className="text-display text-foreground mb-8">
-          Kati & Martin
+          Katalin & Martin
         </motion.h1>
 
         <motion.div initial={{

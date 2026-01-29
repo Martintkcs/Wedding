@@ -6,7 +6,7 @@ import { LeafSvg } from "./BotanicalDecoration";
 
 const contacts = [
   {
-    name: "Kati",
+    name: "Katalin",
     role: "Menyasszony",
     phone: "+36 30 893 3873",
     email: "kati061099@gmail.com",
@@ -98,7 +98,7 @@ export const Footer = () => (
   <footer className="py-12 border-t border-border">
     <div className="section-container text-center">
       <LeafSvg className="w-8 h-12 mx-auto mb-6 text-primary/30" />
-      <p className="font-serif text-2xl text-foreground mb-2">Kati & Martin</p>
+      <p className="font-serif text-2xl text-foreground mb-2">Katalin & Martin</p>
       <p className="text-sm text-muted-foreground mb-6">2026. szeptember 12.</p>
       <p className="text-xs text-muted-foreground">
         Szeretettel készítve a nagy napunkra
