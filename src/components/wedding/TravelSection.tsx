@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Car, Train, Plane, ParkingCircle, Hotel, ExternalLink } from "lucide-react";
+import { Car, ParkingCircle, Hotel, ExternalLink } from "lucide-react";
 import { SectionDivider } from "./BotanicalDecoration";
 
 const travelOptions = [
@@ -77,6 +77,28 @@ export const TravelSection = () => {
               </motion.div>
             ))}
           </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-8 rounded-2xl overflow-hidden shadow-card h-64 sm:h-80 bg-sage-muted/50 flex items-center justify-center"
+          >
+            <div className="text-center p-8">
+              <p className="text-muted-foreground mb-2">Interaktív térkép</p>
+              <p className="text-sm text-muted-foreground/60">
+                Secret Lake, Pápa
+              </p>
+              <a
+                href="https://www.google.com/maps/place/Secret+Lake/@47.3004312,17.5029086,17z/data=!3m1!4b1!4m6!3m5!1s0x4769633bdc1d44eb:0x8f4d2a4a7a4cc5c!8m2!3d47.3004312!4d17.5054835!16s%2Fg%2F11ln7stxc0?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-primary hover:underline text-sm"
+              >
+                Megnyitás a Google Térképen
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </motion.div>
         </div>
 
         {/* Accommodations */}
@@ -84,7 +106,7 @@ export const TravelSection = () => {
           <h3 className="font-serif text-xl text-foreground text-center mb-8">
             Hol szállsz meg
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="flex justify-center">
             {accommodations.map((hotel, index) => (
               <motion.a
                 key={hotel.name}
@@ -92,7 +114,7 @@ export const TravelSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="card-botanical group hover:shadow-elevated transition-all duration-300"
+                className="card-botanical group hover:shadow-elevated transition-all duration-300 w-full max-w-lg"
               >
                 <div className="flex items-start justify-between mb-3">
                   <Hotel className="w-5 h-5 text-primary" />
@@ -111,30 +133,6 @@ export const TravelSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Map Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="rounded-2xl overflow-hidden shadow-card h-64 sm:h-80 bg-sage-muted/50 flex items-center justify-center"
-        >
-          <div className="text-center p-8">
-            <p className="text-muted-foreground mb-2">Interaktív térkép</p>
-            <p className="text-sm text-muted-foreground/60">
-              Secret Lake, Pápa
-            </p>
-            <a
-              href="https://www.google.com/maps/place/Secret+Lake/@47.3004312,17.5029086,17z/data=!3m1!4b1!4m6!3m5!1s0x4769633bdc1d44eb:0x8f4d2a4a7a4cc5c!8m2!3d47.3004312!4d17.5054835!16s%2Fg%2F11ln7stxc0?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-4 text-primary hover:underline text-sm"
-            >
-              Megnyitás a Google Térképen
-              <ExternalLink size={14} />
-            </a>
-          </div>
-        </motion.div>
       </div>
 
       <SectionDivider />
