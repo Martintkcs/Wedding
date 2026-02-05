@@ -88,11 +88,11 @@ export const ScheduleSection = () => {
 
                 {/* Content */}
                 <div
-                  className={`ml-16 sm:ml-0 sm:w-1/2 ${
+                  className={`ml-16 sm:ml-0 w-full sm:w-1/2 ${
                     index % 2 === 0 ? "sm:pr-12 sm:text-right" : "sm:pl-12"
                   }`}
                 >
-                  <div className="card-botanical">
+                  <div className="card-botanical w-full">
                     <span className="inline-block px-3 py-1 mb-2 text-sm font-medium text-primary bg-primary/10 rounded-full">
                       {item.time}
                     </span>
