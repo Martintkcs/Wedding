@@ -42,8 +42,8 @@ const menuCategories = [
       { course: "Csapolt sör", dish: "Peroni" },
       { course: "Borok", dish: "Olasz Rizling, muskotály, cabernet,\n" +
             "rosé, kék frankos" },
-         { course: "alkoholmentes italok", dish: "Coca cola, Fanta, sprite, tonic,\n" +
-               "almalé, baracklé, narancslé, peroni, kávék, Limonádék" }
+         { course: "alkoholmentes italok", dish: "Coca cola, Fanta, Sprite, Tonic,\n" +
+               "Almalé, Baracklé, Narancslé, Peroni, Kávék, Limonádék" }
     ],
   },
 ];
