@@ -50,6 +50,11 @@ const accommodationMaps = [
   },
 ];
 
+const accommodationPairs = accommodations.map((hotel, index) => ({
+  hotel,
+  map: accommodationMaps[index],
+}));
+
 export const TravelSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -134,33 +139,79 @@ export const TravelSection = () => {
           <p className="text-sm text-muted-foreground text-center mb-8">
             (pontos szállásodat az esküvő előtt megkapod)
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {accommodations.map((hotel, index) => (
+          <div className="grid grid-cols-1 gap-6 md:hidden">
+            {accommodationPairs.map((pair, index) => (
+              <div key={pair.hotel.name} className="space-y-4">
                 <motion.a
-                    key={hotel.name}
-                    href={hotel.link}
-                    initial={{opacity: 0, y: 20}}
-                    animate={isInView ? {opacity: 1, y: 0} : {}}
-                    transition={{duration: 0.5, delay: 0.4 + index * 0.1}}
-                    className="card-botanical group hover:shadow-elevated transition-all duration-300 h-full min-h-[220px] flex flex-col"
+                  href={pair.hotel.link}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  className="card-botanical group hover:shadow-elevated transition-all duration-300 h-full min-h-[220px] flex flex-col"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <Hotel className="w-5 h-5 text-primary"/>
-                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors"/>
+                    <Hotel className="w-5 h-5 text-primary" />
+                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
                   <h4 className="font-serif text-lg text-foreground mb-1">
-                    {hotel.name}
+                    {pair.hotel.name}
                   </h4>
                 </motion.a>
+                <motion.div
+                  key={pair.map.description}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  className="rounded-2xl overflow-hidden shadow-card bg-sage-muted/50 flex items-center justify-center h-full min-h-[220px]"
+                >
+                  <div className="text-center p-6">
+                    <p className="text-muted-foreground mb-2">
+                      {pair.map.title}
+                    </p>
+                    <p className="text-sm text-muted-foreground/60">
+                      {pair.map.description}
+                    </p>
+                    <a
+                      href={pair.map.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-4 text-primary hover:underline text-sm"
+                    >
+                      Megnyitás a Google Térképen
+                      <ExternalLink size={14} />
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
+            {accommodations.map((hotel, index) => (
+              <motion.a
+                key={hotel.name}
+                href={hotel.link}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                className="card-botanical group hover:shadow-elevated transition-all duration-300 h-full min-h-[220px] flex flex-col"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <Hotel className="w-5 h-5 text-primary" />
+                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h4 className="font-serif text-lg text-foreground mb-1">
+                  {hotel.name}
+                </h4>
+              </motion.a>
+            ))}
+          </div>
+          <div className="hidden md:grid md:grid-cols-3 gap-6 mt-8">
             {accommodationMaps.map((mapItem, index) => (
               <motion.div
                 key={mapItem.description}
-                initial={{opacity: 0, y: 20}}
-                animate={isInView ? {opacity: 1, y: 0} : {}}
-                transition={{duration: 0.5, delay: 0.4 + index * 0.1}}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                 className="rounded-2xl overflow-hidden shadow-card bg-sage-muted/50 flex items-center justify-center h-full min-h-[220px]"
               >
                 <div className="text-center p-6">
@@ -175,7 +226,7 @@ export const TravelSection = () => {
                     className="inline-flex items-center gap-2 mt-4 text-primary hover:underline text-sm"
                   >
                     Megnyitás a Google Térképen
-                    <ExternalLink size={14}/>
+                    <ExternalLink size={14} />
                   </a>
                 </div>
               </motion.div>
