@@ -141,7 +141,7 @@ export const TravelSection = () => {
           </p>
           <div className="grid grid-cols-1 gap-6 md:hidden">
             {accommodationPairs.map((pair, index) => (
-              <div key={pair.hotel.name} className="space-y-4">
+              <div key={pair.hotel.name} className="grid gap-6">
                 <motion.a
                   href={pair.hotel.link}
                   initial={{ opacity: 0, y: 20 }}
