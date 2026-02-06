@@ -9,7 +9,7 @@ const menuCategories = [
     icon: Wine,
     title: "Üdvözlő italok",
     items: [
-      "Alkholos italok",
+      "Alkoholos italok",
       "Üdítők",
       "Friss limonádé",
       "Szénsavas víz",
