@@ -8,7 +8,8 @@ const travelOptions = [
   {
     icon: Car,
     title: "Autóval",
-    content: "A helyszín a 83-s útról könnyen megközelíthető. GPS: Pápa, Malom út 739/10, 8500.",
+    content:
+      "A helyszín a 83-s útról könnyen megközelíthető. GPS: Pápa, Malom út 739/10, 8500.",
   },
   {
     icon: ParkingCircle,
@@ -60,7 +61,7 @@ export const TravelSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="travel" className="py-20 sm:py-28">
+    <section id="travel" className="py-20 sm:py-28 scroll-mt-24">
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -69,16 +70,13 @@ export const TravelSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-heading text-foreground mb-4">
-            Utazás és szállás
-          </h2>
+          <h2 className="text-heading text-foreground mb-4">Utazás</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Hogyan jutsz el az esküvőre és hol szállhatsz meg
+            Hogyan jutsz el az esküvőre
           </p>
         </motion.div>
 
-        {/* Getting There */}
-        <div className="mb-16">
+        <div className="mb-8">
           <h3 className="font-serif text-xl text-foreground text-center mb-8">
             Megközelítés
           </h3>
@@ -111,13 +109,11 @@ export const TravelSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-8 rounded-2xl overflow-hidden shadow-card bg-sage-muted/50 flex items-center justify-center p-6 sm:p-8"
+            className="mt-8 rounded-2xl overflow-hidden shadow-card bg-sage-muted/50 p-8"
           >
             <div className="text-center">
               <p className="text-muted-foreground mb-2">Interaktív térkép</p>
-              <p className="text-sm text-muted-foreground/60">
-                Secret Lake, Pápa
-              </p>
+              <p className="text-sm text-muted-foreground/60">Secret Lake, Pápa</p>
               <a
                 href="https://www.google.com/maps/place/Secret+Lake/@47.3004312,17.5029086,17z/data=!3m1!4b1!4m6!3m5!1s0x4769633bdc1d44eb:0x8f4d2a4a7a4cc5c!8m2!3d47.3004312!4d17.5054835!16s%2Fg%2F11ln7stxc0?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
@@ -130,8 +126,33 @@ export const TravelSection = () => {
             </div>
           </motion.div>
         </div>
+      </div>
 
-        {/* Accommodations */}
+      <SectionDivider />
+    </section>
+  );
+};
+
+export const AccommodationSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="accommodation" className="py-20 sm:py-28 scroll-mt-24">
+      <div className="section-container">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-heading text-foreground mb-4">Szállás</h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Hol szállhatsz meg az esküvő után
+          </p>
+        </motion.div>
+
         <div className="mb-12">
           <h3 className="font-serif text-xl text-foreground text-center mb-2">
             Hol szállsz meg
@@ -167,9 +188,7 @@ export const TravelSection = () => {
                   className="rounded-2xl overflow-hidden shadow-card bg-sage-muted/50 flex items-center justify-center h-full min-h-[220px]"
                 >
                   <div className="text-center p-6">
-                    <p className="text-muted-foreground mb-2">
-                      {pair.map.title}
-                    </p>
+                    <p className="text-muted-foreground mb-2">{pair.map.title}</p>
                     <p className="text-sm text-muted-foreground/60">
                       {pair.map.description}
                     </p>
@@ -203,9 +222,7 @@ export const TravelSection = () => {
                   <Hotel className="w-5 h-5 text-primary" />
                   <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
-                <h4 className="font-serif text-lg text-foreground mb-1">
-                  {hotel.name}
-                </h4>
+                <h4 className="font-serif text-lg text-foreground mb-1">{hotel.name}</h4>
               </motion.a>
             ))}
           </div>
@@ -220,9 +237,7 @@ export const TravelSection = () => {
               >
                 <div className="text-center p-6">
                   <p className="text-muted-foreground mb-2">{mapItem.title}</p>
-                  <p className="text-sm text-muted-foreground/60">
-                    {mapItem.description}
-                  </p>
+                  <p className="text-sm text-muted-foreground/60">{mapItem.description}</p>
                   <a
                     href={mapItem.link}
                     target="_blank"
@@ -239,7 +254,7 @@ export const TravelSection = () => {
         </div>
       </div>
 
-      <SectionDivider/>
+      <SectionDivider />
     </section>
   );
 };

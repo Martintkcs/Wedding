@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/wedding/HeroSection";
 import { InfoSection } from "@/components/wedding/InfoSection";
 import { ScheduleSection } from "@/components/wedding/ScheduleSection";
 import { MenuSection } from "@/components/wedding/MenuSection";
-import { TravelSection } from "@/components/wedding/TravelSection";
+import { TravelSection, AccommodationSection } from "@/components/wedding/TravelSection";
 import { FAQSection } from "@/components/wedding/FAQSection";
 import { GallerySection } from "@/components/wedding/GallerySection";
 import { ContactSection, Footer } from "@/components/wedding/ContactSection";
@@ -18,6 +18,7 @@ const Index = () => {
         <ScheduleSection />
         <MenuSection />
         <TravelSection />
+        <AccommodationSection />
         <GallerySection />
         <FAQSection />
         <ContactSection />

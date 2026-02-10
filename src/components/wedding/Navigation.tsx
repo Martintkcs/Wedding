@@ -8,6 +8,7 @@ const navItems = [
   { label: "Program", href: "#schedule" },
   { label: "Menü", href: "#menu" },
   { label: "Utazás", href: "#travel" },
+  { label: "Szállás", href: "#accommodation" },
   { label: "GYIK", href: "#faq" },
   { label: "Kapcsolat", href: "#contact" },
 ];
@@ -20,16 +21,54 @@ export const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
+    const scrollToHash = (hash: string, behavior: ScrollBehavior = "smooth") => {
+      if (!hash.startsWith("#")) {
+        return;
+      }
+
+      const element = document.querySelector(hash);
+      if (!element) {
+        return;
+      }
+
+      const navHeight = document.querySelector("nav")?.getBoundingClientRect().height ?? 80;
+      const targetTop = element.getBoundingClientRect().top + window.scrollY - navHeight + 8;
+      window.scrollTo({ top: targetTop, behavior });
+    };
+
+    const handleHashChange = () => {
+      scrollToHash(window.location.hash, "smooth");
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", handleHashChange);
+
+    if (window.location.hash) {
+      window.setTimeout(() => {
+        scrollToHash(window.location.hash, "auto");
+      }, 0);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
+
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (!element) {
+      return;
     }
+
+    const navHeight = document.querySelector("nav")?.getBoundingClientRect().height ?? 80;
+    const targetTop = element.getBoundingClientRect().top + window.scrollY - navHeight + 8;
+
+    window.history.pushState(null, "", href);
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
   };
 
   return (
@@ -42,7 +81,6 @@ export const Navigation = () => {
     >
       <div className="section-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
           <a
             href="#home"
             onClick={(event) => {
@@ -54,7 +92,6 @@ export const Navigation = () => {
             K & M
           </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <a
@@ -71,7 +108,6 @@ export const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 text-muted-foreground hover:text-primary transition-colors"
@@ -82,7 +118,6 @@ export const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
