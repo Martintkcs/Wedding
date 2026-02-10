@@ -45,9 +45,8 @@ export const Navigation = () => {
           {/* Logo */}
           <a
             href="#home"
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
               handleNavClick("#home");
             }}
             className="font-serif text-xl sm:text-2xl text-primary hover:text-primary/80 transition-colors"
@@ -61,9 +60,8 @@ export const Navigation = () => {
               <a
                 key={item.href}
                 href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => {
+                onClick={(event) => {
+                  event.preventDefault();
                   handleNavClick(item.href);
                 }}
                 className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
@@ -100,9 +98,8 @@ export const Navigation = () => {
                   <motion.a
                     key={item.href}
                     href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={() => {
+                    onClick={(event) => {
+                      event.preventDefault();
                       handleNavClick(item.href);
                     }}
                     initial={{ opacity: 0, x: -20 }}
