@@ -149,16 +149,15 @@ export const AccommodationSection = () => {
         >
           <h2 className="text-heading text-foreground mb-4">Szállás</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Hol szállhatsz meg az esküvő után
+            Pontos szállásodat a meghívóban találod
           </p>
         </motion.div>
 
         <div className="mb-12">
           <h3 className="font-serif text-xl text-foreground text-center mb-2">
-            Hol szállsz meg
+            Elérhetőségek
           </h3>
           <p className="text-sm text-muted-foreground text-center mb-8">
-            (pontos szállásodat az esküvő előtt megkapod)
           </p>
           <div className="grid grid-cols-1 gap-6 md:hidden">
             {accommodationPairs.map((pair, index) => (
